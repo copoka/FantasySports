@@ -1,0 +1,64 @@
+DROP TABLE Roster;
+DROP TABLE LeagueMember;
+DROP TABLE League;
+DROP TABLE TeamOwner;
+DROP TABLE Player;
+DROP TABLE PlayerStat;
+DROP TABLE Sequence;
+
+CREATE TABLE PlayerStat
+(
+ID bigint,
+PassingYards int,
+PassingTD int,
+ScrimmageYards int,
+ScrimmageTD int,
+Interceptions int,
+Fumbles int,
+Primary Key (ID)
+);
+
+CREATE TABLE Player
+(
+ID bigint,
+StatID bigint,
+name varchar(255),
+position varchar(2),
+Primary Key (ID),
+FOREIGN KEY (StatID) REFERENCES PlayerStat(ID)
+);
+
+CREATE TABLE teamOwner
+(
+ID bigint,
+username varchar(30),
+password varchar(30),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE League
+(
+ID bigint,
+leagueName varchar(255),
+commishID bigint,
+Primary Key (ID),
+FOREIGN KEY (commishID) REFERENCES teamOwner(ID)
+);
+
+CREATE TABLE LeagueMember
+(
+ID bigint,
+memberID bigint,
+leagueID bigint,
+Primary Key (ID),
+FOREIGN KEY (memberID) REFERENCES teamOwner(ID),
+FOREIGN KEY (leagueID) REFERENCES league(ID)
+);
+
+Create TABLE Roster
+(
+leagueMemberID bigint,
+playerID bigint,
+FOREIGN KEY (leagueMemberID) REFERENCES LeagueMember(ID),
+FOREIGN KEY (playerID) REFERENCES player(ID)
+);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/FantasySports">
+<!--
+    <Resource name="jdbc/muschler" auth="container"
+        maxActive="100" maxIdle="30" maxWait="10000"
+        username="f" password="f"
+        driverClassName="org.apache.derby.jdbc.ClientDriver"
+        url="jdbc:derby://localhost:1527/f"
+        logAbandoned="true" removeAbandoned="true"
+        removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+-->
+</Context>
