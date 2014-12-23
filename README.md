@@ -1,5 +1,10 @@
 Fantasy Sports
 ---------------
+Object Oriented Enterprise Computing
+
+DePaul University
+
+Fall 2014
 
 Setup
 ------
